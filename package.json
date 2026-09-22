@@ -1,0 +1,20 @@
+{
+  "id": "deki-gpio",
+  "displayName": "GPIO",
+  "description": "Digital pins: drive, read, and count edges by interrupt, plus a boot step that drives a pin. The platform package supplies the backend",
+  "minEngine": "0.16.0",
+  "buildDefine": "DEKI_PACKAGE_GPIO",
+  "requires": [],
+  "features": [
+    {
+      "id": "pin_setup",
+      "displayName": "Boot Pins",
+      "buildDefine": "DEKI_FEATURE_GPIO_PIN_SETUP",
+      "defaultEnabled": true,
+      "componentTypes": [
+        "GpioPinSetup"
+      ]
+    }
+  ],
+  "dependencies": {}
+}

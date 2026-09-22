@@ -1,0 +1,19 @@
+# Changelog
+
+Notable changes to `deki-gpio`. Engine and editor changes are in the
+[engine changelog](https://github.com/dekiengine/deki-engine/blob/master/CHANGELOG.md).
+
+A package's `minEngine` names the engine version it needs. Before 1.0 a
+breaking change bumps the minor across the editor, the engine and every
+package together, so a package with no changes of its own is still released
+alongside one that has them.
+
+## Unreleased
+
+### Added
+- `IDekiGPIO`: set a pin as output or input, write, read, and count edges by
+  interrupt (`CountEdges` / `TakeEdges`), with `DekiGPIO::GetCurrent()` for the
+  platform's implementation.
+- `GpioPinSetup`: a boot step that drives one pin high or low, with an
+  optional wait afterwards. It was `DekiEsp32::ESP32PinSetup` for a few days;
+  scenes naming that load as this.
