@@ -6,9 +6,9 @@
 #include <deki/interop/Plugin.h>
 #include <deki/LogSystem.h>
 
-extern void DekiGPIO_RegisterComponents();
-extern int DekiGPIO_GetAutoComponentCount();
-extern const Deki::ComponentMeta* DekiGPIO_GetAutoComponentMeta(int index);
+extern void DekiGPIORegisterComponents();
+extern int DekiGPIOGetAutoComponentCount();
+extern const Deki::ComponentMeta* DekiGPIOGetAutoComponentMeta(int index);
 
 namespace DekiGpio
 {
@@ -25,26 +25,26 @@ using namespace DekiGpio;
 
 extern "C"
 {
-    DEKI_GPIO_API int DekiGPIO_EnsureRegistered(void)
+    DEKI_GPIO_API int DekiGPIOEnsureRegistered(void)
     {
 #ifdef DEKI_EDITOR
         if (s_GPIORegistered)
         {
-            return ::DekiGPIO_GetAutoComponentCount();
+            return ::DekiGPIOGetAutoComponentCount();
         }
         s_GPIORegistered = true;
-        ::DekiGPIO_RegisterComponents();
-        return ::DekiGPIO_GetAutoComponentCount();
+        ::DekiGPIORegisterComponents();
+        return ::DekiGPIOGetAutoComponentCount();
 #else
         return 0;
 #endif
     }
 
-    DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)
+    DEKI_PLUGIN_API const char* DekiPluginGetName(void)
     {
         return "Deki GPIO Package";
     }
-    DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
+    DEKI_PLUGIN_API const char* DekiPluginGetVersion(void)
     {
 #ifdef DEKI_PACKAGE_VERSION
         return DEKI_PACKAGE_VERSION;
@@ -52,39 +52,39 @@ extern "C"
         return "0.0.0-dev";
 #endif
     }
-    DEKI_PLUGIN_API int DekiPlugin_Init(void)
+    DEKI_PLUGIN_API int DekiPluginInit(void)
     {
         return 0;
     }
-    DEKI_PLUGIN_API void DekiPlugin_Shutdown(void)
+    DEKI_PLUGIN_API void DekiPluginShutdown(void)
     {
         s_GPIORegistered = false;
     }
 
 #ifdef DEKI_EDITOR
-    DEKI_PLUGIN_API int DekiPlugin_GetComponentCount(void)
+    DEKI_PLUGIN_API int DekiPluginGetComponentCount(void)
     {
-        return ::DekiGPIO_GetAutoComponentCount();
+        return ::DekiGPIOGetAutoComponentCount();
     }
-    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int index)
+    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPluginGetComponentMeta(int index)
     {
-        return ::DekiGPIO_GetAutoComponentMeta(index);
+        return ::DekiGPIOGetAutoComponentMeta(index);
     }
 #else
-    DEKI_PLUGIN_API int DekiPlugin_GetComponentCount(void)
+    DEKI_PLUGIN_API int DekiPluginGetComponentCount(void)
     {
         return 0;
     }
-    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int)
+    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPluginGetComponentMeta(int)
     {
         return nullptr;
     }
 #endif
 
-    DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
+    DEKI_PLUGIN_API void DekiPluginRegisterComponents(void)
     {
 #ifdef DEKI_EDITOR
-        DekiGPIO_EnsureRegistered();
+        DekiGPIOEnsureRegistered();
 #endif
     }
 
