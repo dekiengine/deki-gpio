@@ -22,12 +22,12 @@ namespace DekiGpio
  */
 DEKI_CATEGORY("GPIO")
 DEKI_DISPLAY_NAME("GPIO Pin")
-DEKI_DESCRIPTION("Drives a pin high or low at boot: a power enable, or the chip select of an unused device on a shared bus.")
+DEKI_DESCRIPTION(
+    "Drives a pin high or low at boot: a power enable, or the chip select of an unused device on a shared bus.")
 DEKI_FORMER_NAME("DekiEsp32::ESP32PinSetup")
 class DEKI_GPIO_API GpioPinSetup : public Deki::SetupComponent
 {
 public:
-
     DEKI_EXPORT
     DEKI_TOOLTIP("Pin number, as the platform numbers them (-1 = do nothing)")
     DEKI_RANGE(-1, 255)
