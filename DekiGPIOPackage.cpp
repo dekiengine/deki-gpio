@@ -1,7 +1,4 @@
-/**
- * @file DekiGPIOPackage.cpp
- * @brief Package entry point for deki-gpio
- */
+// Package entry point for deki-gpio.
 #include "DekiGPIOPackage.h"
 #include <deki/interop/Plugin.h>
 #include <deki/LogSystem.h>

@@ -6,13 +6,9 @@
 namespace DekiGpio
 {
 
-/**
- * @brief The platform's pins
- *
- * One implementation per platform, registered by its package at start-up;
- * components reach it through GetCurrent(). Null on a platform with no
- * pins to speak of, such as the desktop.
- */
+/// The platform's pins. Each platform's package registers one implementation
+/// at start-up, and components reach it through GetCurrent(). Null on a
+/// platform without pins, such as the desktop.
 class DEKI_GPIO_API DekiGPIO
 {
 public:

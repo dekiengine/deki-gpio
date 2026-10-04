@@ -8,18 +8,16 @@
 namespace DekiGpio
 {
 
-/**
- * @brief Drives one pin to a fixed level during boot
- *
- * Boards gate things behind a pin: a power rail that feeds the display and
- * the touch controller, the chip select of a second device sharing the
- * display's SPI bus, an amplifier's enable. Such a pin has to be at its level
- * before the setup step that needs it, so this is a setup step of its own:
- * list it in PlatformSetupComponent's setupComponents ahead of that step.
- *
- * One pin per component; a board that needs three adds three. Works on any
- * platform whose package provides deki-gpio's backend.
- */
+/// Drives one pin to a fixed level during boot.
+///
+/// Boards put things behind a pin: a power rail for the display and touch
+/// controller, the chip select of a second device on the display's SPI bus, an
+/// amplifier's enable. The pin must be at its level before the setup step that
+/// needs it, so this is a setup step of its own: list it in
+/// PlatformSetupComponent's setupComponents ahead of that step.
+///
+/// One pin per component; a board that needs three adds three. Works on any
+/// platform whose package provides deki-gpio's backend.
 DEKI_CATEGORY("GPIO")
 DEKI_DISPLAY_NAME("GPIO Pin")
 DEKI_DESCRIPTION(
@@ -45,7 +43,5 @@ public:
     void Setup(SetupCallback onComplete) override;
     const char* GetSetupName() const override { return "GPIO Pin"; }
 };
-
-// Generated property metadata
 
 }  // namespace DekiGpio
