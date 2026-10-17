@@ -1,0 +1,9 @@
+{
+    "Drive the pin high (off = low)": "将引脚驱动为高电平（关闭 = 低电平）",
+    "Gpio Pin Setup": "GPIO 引脚设置",
+    "High": "高电平",
+    "Milliseconds to wait afterwards, for a power rail to come up before the next setup step": "设置后等待的毫秒数，让电源轨在下一个设置步骤前稳定上电",
+    "Pin": "引脚",
+    "Pin number, as the platform numbers them (-1 = do nothing)": "引脚编号，按平台的编号方式（-1 = 不执行任何操作）",
+    "Settle Ms": "稳定等待 ms"
+}

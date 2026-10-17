@@ -1,0 +1,9 @@
+{
+    "Drive the pin high (off = low)": "핀을 High로 구동합니다 (끄면 Low)",
+    "Gpio Pin Setup": "GPIO 핀 설정",
+    "High": "High",
+    "Milliseconds to wait afterwards, for a power rail to come up before the next setup step": "설정 후 기다릴 밀리초입니다. 다음 설정 단계 전에 전원 레일이 올라오기를 기다립니다",
+    "Pin": "핀",
+    "Pin number, as the platform numbers them (-1 = do nothing)": "플랫폼에서 매기는 번호로 지정하는 핀 번호입니다 (-1 = 아무것도 안 함)",
+    "Settle Ms": "안정화 대기 ms"
+}
