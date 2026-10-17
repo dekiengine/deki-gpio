@@ -5,5 +5,7 @@
     "Milliseconds to wait afterwards, for a power rail to come up before the next setup step": "설정 후 기다릴 밀리초입니다. 다음 설정 단계 전에 전원 레일이 올라오기를 기다립니다",
     "Pin": "핀",
     "Pin number, as the platform numbers them (-1 = do nothing)": "플랫폼에서 매기는 번호로 지정하는 핀 번호입니다 (-1 = 아무것도 안 함)",
-    "Settle Ms": "안정화 대기 ms"
+    "Settle Ms": "안정화 대기 ms",
+    "Drives a pin high or low at boot: a power enable, or the chip select of an unused device on a shared bus.": "부팅 시 핀을 High 또는 Low로 설정합니다. 전원 활성화 핀이나, 공유 버스에서 사용하지 않는 장치의 칩 셀렉트에 사용합니다.",
+    "GPIO": "GPIO"
 }

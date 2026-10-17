@@ -5,5 +5,7 @@
     "Milliseconds to wait afterwards, for a power rail to come up before the next setup step": "設定した後に待つミリ秒数です。次のセットアップ手順の前に電源レールが立ち上がるのを待ちます",
     "Pin": "ピン",
     "Pin number, as the platform numbers them (-1 = do nothing)": "ピン番号です。プラットフォームでの番号で指定します (-1 = 何もしない)",
-    "Settle Ms": "安定待ち ms"
+    "Settle Ms": "安定待ち ms",
+    "Drives a pin high or low at boot: a power enable, or the chip select of an unused device on a shared bus.": "起動時にピンを High または Low にします。電源のイネーブルや、共有バス上の使わないデバイスのチップセレクトに使います。",
+    "GPIO": "GPIO"
 }
