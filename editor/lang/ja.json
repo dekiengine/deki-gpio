@@ -1,0 +1,9 @@
+{
+    "Drive the pin high (off = low)": "ピンを High にします (オフ = Low)",
+    "Gpio Pin Setup": "GPIO ピンセットアップ",
+    "High": "High",
+    "Milliseconds to wait afterwards, for a power rail to come up before the next setup step": "設定した後に待つミリ秒数です。次のセットアップ手順の前に電源レールが立ち上がるのを待ちます",
+    "Pin": "ピン",
+    "Pin number, as the platform numbers them (-1 = do nothing)": "ピン番号です。プラットフォームでの番号で指定します (-1 = 何もしない)",
+    "Settle Ms": "安定待ち ms"
+}
