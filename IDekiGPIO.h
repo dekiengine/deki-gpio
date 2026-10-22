@@ -26,6 +26,10 @@ enum class Edge : uint8_t
 /// flow meter). A game polls once a frame and a fast roll puts several pulses
 /// in one frame, so the platform keeps the count between polls.
 ///
+/// Waiting for an edge is for a signal that must be acted on at once, such
+/// as a panel's tearing-effect line, which says the panel has started a new
+/// refresh.
+///
 /// Pin numbers are the platform's own. The platform package (deki-esp32-
 /// integration for ESP-IDF) registers its implementation with DekiGPIO.
 class IDekiGPIO
@@ -44,6 +48,18 @@ public:
     /// Edges counted since the last call; 0 for a pin not being counted.
     virtual uint32_t TakeEdges(int pin) = 0;
     virtual void StopCounting(int pin) = 0;
+
+    /// Blocks until `pin`, counted with CountEdges, sees its next edge, or
+    /// `timeoutMs` passes; it returns within an interrupt's latency of the
+    /// edge. An edge before the call does not end the wait. One task waits on
+    /// a pin at a time. False on a timeout, for a pin not being counted, or
+    /// on a platform that cannot wait (the default).
+    virtual bool WaitForEdge(int pin, uint32_t timeoutMs)
+    {
+        (void)pin;
+        (void)timeoutMs;
+        return false;
+    }
 };
 
 }  // namespace DekiGpio
