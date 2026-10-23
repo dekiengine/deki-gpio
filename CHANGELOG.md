@@ -8,6 +8,17 @@ breaking change bumps the minor across the editor, the engine and every
 package together, so a package with no changes of its own is still released
 alongside one that has them.
 
+## Unreleased
+
+### Added
+- `IDekiGPIO::WaitForEdge`: blocks until a counted pin's next edge, or a
+  timeout, and returns within an interrupt's latency of it. For a signal that
+  must be acted on at once, such as a panel's tearing-effect line. The
+  default (a platform that cannot wait) returns false.
+- `IDekiGPIO::TimeSinceEdge`: microseconds since a counted pin's last edge,
+  so a display can tell where its panel is in a refresh. The default returns
+  false.
+
 ## 0.19.0
 
 ### Changed
